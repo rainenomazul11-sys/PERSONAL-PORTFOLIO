@@ -77,4 +77,5 @@ document.addEventListener('DOMContentLoaded', function () {
     setupCarousel('carousel-me');
     setupCarousel('carousel-fam');
     setupCarousel('carousel-gf');
+    setupCarousel('carousel-pets');
 });

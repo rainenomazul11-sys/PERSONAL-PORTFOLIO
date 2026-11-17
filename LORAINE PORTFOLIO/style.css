@@ -79,7 +79,7 @@ body {
 .main-nav a:hover {
     background: linear-gradient(90deg, #e9a3d4 60%, #be3d93 100%);
     color: #3d0b26;
-    box-shadow: 0 4px 16px rgba(56, 142, 60, 0.13);
+    box-shadow: 0 4px 16px rgba(142, 56, 116, 0.13);
     transform: translateY(-2px) scale(1.04);
     border-color: #460a23;
 }
@@ -97,6 +97,105 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.social-links-panel {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.social-links-content {
+    width: 100%;
+}
+
+.social-links-content h2 {
+    margin: 0;
+    color: #9e286d;
+    font-size: 1.6em;
+}
+
+.social-links-content > p {
+    margin: 8px 0 24px;
+    color: #8d325f;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.social-card {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    padding: 22px 16px;
+    border: 1px solid rgba(160, 67, 118, 0.35);
+    border-radius: 18px;
+    background: rgba(245, 232, 241, 0.72);
+    box-shadow: 0 4px 16px rgba(190, 79, 144, 0.1);
+    color: #4d203e;
+    text-decoration: none;
+    animation: social-float 3.2s ease-in-out infinite;
+    transition: background 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+.social-card:nth-child(2) {
+    animation-delay: 0.35s;
+}
+
+.social-card:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+.social-card svg {
+    width: 38px;
+    height: 38px;
+    fill: #8e3860;
+}
+
+.social-card > span:nth-of-type(1) {
+    font-size: 1.12em;
+    font-weight: 700;
+}
+
+.social-handle {
+    color: #b83a7f;
+    font-size: 0.78em;
+}
+
+.social-card:hover,
+.social-card:focus-visible {
+    background: rgba(200, 230, 201, 0.95);
+    box-shadow: 0 10px 24px rgba(142, 56, 106, 0.2);
+    border-color: #8e3871;
+}
+
+.social-card:focus-visible {
+    outline: 3px solid #8e386d;
+    outline-offset: 4px;
+}
+
+.social-card svg {
+    transition: transform 0.25s;
+}
+
+.social-card:hover svg,
+.social-card:focus-visible svg {
+    transform: scale(1.15);
+}
+
+@keyframes social-float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
 }
 
 .translucent-content {
@@ -228,22 +327,13 @@ body {
     padding: 8px 22px 8px 18px;
     border-radius: 999px;
     font-weight: 600;
-    box-shadow: 0 2px 8px #b2dfdb55;
-    text-shadow: 0 1px 6px #388e3c99;
+    box-shadow: 0 2px 8px #f797d255;
+    text-shadow: 0 1px 6px #8e386799;
     display: inline-flex;
     align-items: center;
     gap: 8px;
     letter-spacing: 0.03em;
     position: relative;
-}
-
-.task-status::before {
-    content: "✔";
-    display: inline-block;
-    font-size: 1.1em;
-    color: #c8e6c9;
-    margin-right: 6px;
-    filter: drop-shadow(0 1px 2px #388e3c55);
 }
 
 .image-modal {
@@ -254,7 +344,7 @@ body {
     top: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(30, 50, 30, 0.65);
+    background: rgba(192, 79, 149, 0.65);
     justify-content: center;
     align-items: center;
     transition: background 0.3s;
@@ -287,7 +377,7 @@ body {
     color: #fff;
     cursor: pointer;
     font-weight: bold;
-    text-shadow: 0 2px 8px #222, 0 1px 0 #388e3c33;
+    text-shadow: 0 2px 8px #222, 0 1px 0 #a8357833;
     z-index: 1100;
     transition: color 0.2s;
 }
@@ -306,7 +396,7 @@ body {
 .img-hint {
     font-size: 0.98em;
     color: #a73781;
-    background: rgba(200, 230, 201, 0.35);
+    background: rgba(230, 200, 220, 0.35);
     padding: 6px 16px;
     border-radius: 16px;
     margin-top: 6px;
@@ -385,7 +475,7 @@ body {
     border-left: 6px solid #a04379;
     padding: 22px 28px;
     border-radius: 14px;
-    box-shadow: 0 2px 14px rgba(56, 142, 60, 0.09);
+    box-shadow: 0 2px 14px rgba(83, 5, 57, 0.09);
     font-weight: 500;
     font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
     margin: 0;
@@ -405,25 +495,6 @@ body {
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
     font-size: 1em;
     letter-spacing: 0.01em;
-}
-
-.task-link:hover {
-    background: linear-gradient(90deg, #43a047 60%, #b2dfdb 100%);
-    color: #fff;
-    box-shadow: 0 4px 16px #43a04733;
-}
-
-.task-desc {
-    margin: 10px 0 0 0;
-    font-size: 1em;
-    color: #388e3c;
-    background: rgba(200, 230, 201, 0.18);
-    border-left: 4px solid #81c784;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-weight: 500;
-    box-shadow: 0 1px 6px #b2dfdb33;
-    text-shadow: 0 1px 6px #fff;
 }
 
 /* Make family carousel wider */
@@ -517,5 +588,20 @@ body {
     .main-nav {
         flex-direction: column;
         gap: 8px;
+    }
+
+    .social-links {
+        flex-direction: column;
+    }
+    .social-card {
+        flex-basis: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .social-card,
+    .social-card svg {
+        animation: none;
+        transition: none;
     }
 }
